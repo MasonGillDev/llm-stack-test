@@ -1,0 +1,13 @@
+
+# ~/litellm.config.yaml
+model_list:
+  - model_name: qwen-local                   # alias you will call
+    litellm_params:
+      custom_llm_provider: openai # talk to an OpenAI-style server
+      model: "Qwen/Qwen2.5-7B-Instruct"      # the model name vLLM expects
+      api_base: "http://127.0.0.1:8000/v1"   # your vLLM endpoint
+      api_key: "dummy"                       # vLLM ignores this; LiteLLM expects a string
+
+litellm_settings:
+  num_retries: 2
+  timeout: 120
